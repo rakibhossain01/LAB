@@ -1,27 +1,30 @@
 #include<iostream>
 using namespace std;
 
-class inLine{
-private:
-    int a,b;
+class baseA{
 public:
-    void setter(int mainA,int mainB)
+    void display()
     {
-        a=mainA;
-        b=mainB;
+        cout<<"Base Class"<<endl;
     }
-    void getter()
+    void sum()
     {
-         cout<<a+b<<endl;
+        int a=5,b=6;
+        cout<<a+b<<endl;
+    }
+};
+class derivedB:public baseA{
+public:
+    void print()
+    {
+        cout<<"Derived Class"<<endl;
     }
 };
 int main()
 {
-    inLine obj;
-    int n,m;
-    cin>>n>>m;
-    obj.setter(n,m);
-    obj.getter();
-    
+    derivedB ob2;
+    ob2.print();
+    ob2.sum();
+
     return 0;
 }
